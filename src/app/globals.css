@@ -1,6 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .hero-text {
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+    display: inline-block;
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+
+  .hero-text h1, 
+  .hero-text p {
+    background: linear-gradient(45deg, #ffffff, #e5e5e5, #ffffff, #f5f5f5);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientFlow 8s ease infinite;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  }
+
+  .hero-text:hover {
+    transform: scale(1.05) translateY(-2px);
+  }
+
+  .hero-text:hover h1,
+  .hero-text:hover p {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.05em;
+  }
+
+  .hero-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #ffffff, #e5e5e5);
+    transition: width 0.3s ease;
+  }
+
+  .hero-text:hover::after {
+    width: 100%;
+  }
+
+  .logo-text {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(45deg, #000000, #1a1a1a, #333333, #000000);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: all 0.4s ease;
+    animation: gradientFlow 8s ease infinite;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  .logo-text:hover {
+    transform: scale(1.1) translateY(-2px);
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    letter-spacing: 0.05em;
+  }
+
+  .logo-text::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #000000, #333333);
+    transition: width 0.3s ease;
+  }
+
+  .logo-text:hover::after {
+    width: 100%;
+  }
+
+  @keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
 
 :root {
   --background: #ffffff;
