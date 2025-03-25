@@ -1,7 +1,12 @@
+"use client";
+
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import Link from 'next/link';
+import { useCart } from '@/context/CartContext';
+import { CartDrawer } from './cart/CartDrawer';
 
 export function Navbar() {
+  const { cart, toggleCart } = useCart();
   return (
     <nav className="fixed top-0 w-full bg-white z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,8 +49,17 @@ export function Navbar() {
           </NavigationMenu.Root>
 
           {/* Cart Icon */}
+          {/* Cart */}
           <div className="flex items-center">
-            <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+            <button 
+              onClick={toggleCart}
+              className="p-2 hover:bg-gray-100 rounded-full transition-colors relative text-black"
+            >
+              {cart.totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 bg-black text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                  {cart.totalItems}
+                </span>
+              )}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -63,6 +77,9 @@ export function Navbar() {
               </svg>
             </button>
           </div>
+          
+          {/* Cart Drawer */}
+          <CartDrawer />
         </div>
       </div>
     </nav>

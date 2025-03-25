@@ -63,10 +63,15 @@ export function ProductCard({ product, className = '' }: ProductCardProps) {
         {/* Product Info Section */}
         <div className="relative w-full md:w-1/2 p-8 flex flex-col justify-between">
           <div>
-            <div className="absolute top-8 right-8 bg-black text-white px-6 py-2 rounded-full shadow-lg">
-              <p className="text-lg font-bold">{product.price}</p>
+            <h3 className="text-2xl font-bold mb-4 text-gray-900">{product.name}</h3>
+            <div className="flex items-center justify-between mb-6">
+              <div className="inline-flex bg-black text-white px-6 py-2 rounded-full shadow-lg">
+                <p className="text-lg font-bold">{product.price}</p>
+              </div>
+              <div className="text-sm text-gray-500">
+                <span>Free Shipping</span>
+              </div>
             </div>
-            <h3 className="text-2xl font-bold mb-4 text-gray-900 pr-24">{product.name}</h3>
             {product.description && (
               <p className="text-gray-600 mb-6">
                 {product.description}
