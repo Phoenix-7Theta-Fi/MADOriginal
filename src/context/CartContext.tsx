@@ -107,7 +107,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const savedCart = localStorage.getItem('cart');
     if (savedCart) {
-      const { items, totalItems, subTotal } = JSON.parse(savedCart);
+      const { items } = JSON.parse(savedCart);
       dispatch({ type: 'CLEAR_CART' });
       items.forEach((item: CartItem) => {
         dispatch({ type: 'ADD_ITEM', payload: item });

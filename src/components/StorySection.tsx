@@ -12,7 +12,7 @@ export function StorySection() {
         <div>
           <h3 className="text-2xl font-semibold mb-4 text-gray-800">Our Mission</h3>
           <p className="text-lg mb-6 text-gray-700">
-            To disrupt the fashion industry by providing premium quality clothing at prices that don't break the bank. We believe everyone deserves to look their best without compromising their budget.
+            To disrupt the fashion industry by providing premium quality clothing at prices that don&apos;t break the bank. We believe everyone deserves to look their best without compromising their budget.
           </p>
           <p className="text-lg">
             By cutting out middlemen and working directly with ethical manufacturers, we pass the savings directly to you.

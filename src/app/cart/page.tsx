@@ -29,7 +29,7 @@ export default function CartPage() {
                 />
               </svg>
               <h2 className="text-2xl font-semibold text-gray-900">Your cart is empty</h2>
-              <p className="text-gray-500">Looks like you haven't added any items to your cart yet.</p>
+              <p className="text-gray-500">Looks like you haven&apos;t added any items to your cart yet.</p>
               <Link
                 href="/collections"
                 className="mt-4 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-black hover:bg-gray-900 transition-colors"
